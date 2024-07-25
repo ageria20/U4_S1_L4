@@ -1,8 +1,9 @@
 package EsercizioS1L4;
 
 import enums.Department;
+import interfaces.Worker;
 
-public abstract class Dipendente {
+public abstract class Dipendente implements Worker {
 
     //Attributi
     private int matricola;
@@ -42,4 +43,6 @@ public abstract class Dipendente {
     public double getWorkedHours() {
         return workedHours;
     }
+
+    public abstract void calculateSalary();
 }

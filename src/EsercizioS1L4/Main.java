@@ -2,28 +2,26 @@ package EsercizioS1L4;
 
 import enums.Department;
 
-import static EsercizioS1L4.DipendenteFullTime.calculateSalary;
-import static EsercizioS1L4.DipendentePartTime.calculateSalaryPartTime;
-
 public class Main {
     public static void main(String[] args) {
 
         Dipendente dipFt = new DipendenteFullTime(1, 20000, Department.ADMINISTATION);
-        Dipendente dipPt = new DipendentePartTime(2, 10000, Department.SALES, 30);
-        Dipendente dir = new Dirigente(3, 30000, Department.PRODUCTION);
+        Dipendente dipPt = new DipendentePartTime(2, 300, Department.SALES, 30);
+        Dipendente dir = new Dirigente(3, 30000000, Department.PRODUCTION);
         Dipendente[] dipendenti = {dipFt, dipPt, dir};
-//
-//        for (Dipendente dipendente : dipendenti) {
-//            System.out.println("Matricola nr: " + dipendente.getMatricola());
-//        }
-        for (int i = 0; i < dipendenti.length; i++) {
-            if (dipendenti[i] instanceof DipendentePartTime) {
-                System.out.println("Il salario della Dipendente con matricola " + dipendenti[i].getMatricola() + " e': " + calculateSalaryPartTime(dipendenti[i]));
-            } else
-                System.out.println("Il salario della Dipendente con matricola " + dipendenti[i].getMatricola() + " e': " + calculateSalary(dipendenti[i]));
 
+        for (int i = 0; i < dipendenti.length; i++) {
+            dipendenti[i].calculateSalary();
+            dipendenti[i].checkIn();
         }
 
+        Volontario vol1 = new Volontario("Andrea", 29, true);
+        Volontario vol2 = new Volontario("Mirko", 27, false);
+        Volontario vol3 = new Volontario("Desiree", 30, false);
+        Volontario[] volontari = {vol1, vol2, vol3};
 
+        for (Volontario volontario : volontari) {
+            volontario.checkIn();
+        }
     }
 }
