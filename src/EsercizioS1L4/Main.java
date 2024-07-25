@@ -5,9 +5,9 @@ import enums.Department;
 public class Main {
     public static void main(String[] args) {
 
-        Dipendente dipFt = new DipendenteFullTime(1, 20000, Department.ADMINISTATION);
-        Dipendente dipPt = new DipendentePartTime(2, 300, Department.SALES, 30);
-        Dipendente dir = new Dirigente(3, 30000000, Department.PRODUCTION);
+        DipendenteFullTime dipFt = new DipendenteFullTime(1, 20000, Department.ADMINISTATION);
+        DipendentePartTime dipPt = new DipendentePartTime(2, 300, Department.SALES, 30);
+        Dirigente dir = new Dirigente(3, 30000000, Department.PRODUCTION);
         Dipendente[] dipendenti = {dipFt, dipPt, dir};
 
         for (int i = 0; i < dipendenti.length; i++) {
