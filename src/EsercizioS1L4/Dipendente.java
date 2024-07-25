@@ -18,9 +18,7 @@ public abstract class Dipendente {
     }
 
     public Dipendente(int matricola, double salary, Department department, double workedHours) {
-        this.matricola = matricola;
-        this.salary = salary;
-        this.department = department;
+        this(matricola, salary, department);
         this.workedHours = workedHours;
     }
 
